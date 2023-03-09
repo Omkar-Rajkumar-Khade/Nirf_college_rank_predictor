@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College NIRF Rank Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  
+
+  </head>
+  <body>
+
+    <div>
+      <img src="static/images/NIRF.png" class="w3-border w3-padding" alt="BANNER" style="width:100%">
+    </div>
+    <center>
+    <h1>College NIRF Rank Predictor</h1>
+
+    <br>
+
+    <div class="mb-3" style="width: 300px; border: 5px solid gray; padding: 10px; margin: 0;">
+
+    <form action="/predict" method="POST">
+      <label for="exampleFormControlInput1" class="form-label ">Teaching, Learning and Resources (TLR) Score : </label>
+      <input type="number" step="0.01" name="tlr" placeholder="Score Range(1-100)"><br>
+
+      <label for="exampleFormControlInput1" class="form-label">Research and Professional Practice (RPC) Score : </label>
+      <input type="number" step="0.01" name="rpc" placeholder="Score Range(1-100)"  ><br>
+
+      <label for="exampleFormControlInput1" class="form-label">Graduation Outcome (GO) Score :</label>
+      <input type="number" step="0.01" name="go" placeholder="Score Range(1-100)"><br>
+
+      <label for="exampleFormControlInput1" class="form-label">Outreach and Inclusivity (OI) Score :</label>
+      <input type="number" step="0.01" name="oi" placeholder="Score Range(1-100)"><br>
+
+      <label for="exampleFormControlInput1" class="form-label">Perception Score :</label>
+      <input type="number" step="0.01" name="perception" placeholder="Score Range(1-100)"><br><br>
+
+      <input type="submit" value="Predict" class="btn btn-info"><br>
+    </form>
+  </div>
+
+    {% if prediction is not none %}
+      <p>
+        <h3>The Predicted NIRF college rank is: {{ prediction }}</h3></p>
+    {% endif %}
+
+  <div>
+    <br><br>
+    <p>
+      <h4><u>NOTE:</u></h4><br>
+      NIRF(National Institutional Ranking Framework) is an initiative of the Indian government to rank higher educational institutions in India based on various parameters such as teaching, learning, research, outreach, and perceptio & This Machine Learning model is trained on the 2020 NIRF Ranking dataset.
+    </p>
+  </div>
+  </center>
+  </body>
+</html>
