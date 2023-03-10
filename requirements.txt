@@ -1,9 +1,7 @@
 Flask
-Jinja2
 joblib
 Pillow
 pandas
 numpy
 gunicorn
-os
 scikit-learn
