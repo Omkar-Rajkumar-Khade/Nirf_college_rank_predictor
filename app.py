@@ -20,7 +20,7 @@ def predict():
     perception = float(request.form.get("perception"))
 
     prediction = model.predict([[tlr, rpc, go, oi, perception]])
-    
+    prediction = prediction -1
 
     return render_template("index.html", prediction=int(prediction[0].round()))
 
